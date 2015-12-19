@@ -1,46 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>This is mixj93</title>
+    <meta charset="utf-8">
+    <title>mixj93.com - All about mixj93</title>
+    <meta name="description" content="We work as partners with the biggest and smartest brands to make defining digital products, services and businesses.">
+    <meta name="keywords" content="mixj93, digital design, app development, ventures, development, engineering, product design, product development.">
+    <meta name="author" content="mixj93">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" type="text/css" href="style/reset.css">
     <link rel="stylesheet" type="text/css" href="style/main.css">
+    <script type="text/javascript" src="script/jquery.min.js"></script>
+    <script type="text/javascript" src="script/typewriting.min.js"></script>
     <style type="text/css">
-        html,body {width: 100%; height: 100%; }
-        .outer {position: absolute; left: 0; right: 0; top: 0; bottom: 0; clear: both;}
-        .nav-box {width: 25%; float: left; height: 100%; display: table;}
-        .nav-box.first {background-color: #F06292;}
-        .nav-box.second {background-color: #9675CE;}
-        .nav-box.third {background-color: #4DD0E2;}
-        .nav-box.fourth {background-color: #4CB6AC;}
-        .nav-box-inner {display: table-cell; vertical-align: middle; text-align: center; color: #fff;}
-        @media (max-width: 768px) {
-            .nav-box {width: 50%; float: left; height: 50%; display: table;}
-        }
+        .banner-sec { display: table; width: 100%; height: 100vh; min-height: 100vh; background: url(images/pattern.jpg) center center #f9615b; }
+        .banner-sec-inner { display: table-cell; text-align: center; vertical-align: middle; }
+        .big-word { font-size: 72px; text-align: left; font-family: "Arial Black"; color: #fff; margin: 0 auto; width: 800px; max-width: 90%; line-height: 1; }
     </style>
 </head>
 <body>
-    <div class="outer">
-        <div class="nav-box first">
-            <div class="nav-box-inner">
-                Lab
-            </div>
-        </div>
-        <div class="nav-box second">
-            <div class="nav-box-inner">
-                Page
-            </div>
-        </div>
-        <div class="nav-box third">
-            <div class="nav-box-inner">
-                explore
-            </div>
-        </div>
-        <div class="nav-box fourth">
-            <div class="nav-box-inner">
-                About 
-            </div>
+    <div class="banner-sec">
+        <div class="banner-sec-inner">
+            <p class="big-word"></p>
         </div>
     </div>
+    <script type="text/javascript">
+        $(function(){
+            // setTimeout( function(){
+            //     $('.big-word').typewriting( "FEAR NOTHING, ", {
+            //         "typing_interval": 200,
+            //         "blink_interval": "1s",
+            //         "cursor_color": "#fff"
+            //     });
+            //     setTimeout( function(){
+            //         $('.big-word').rewrite("RESPECT EVERYTHING.");
+            //         setTimeout( function(){
+            //             $('.big-word').rewrite("HERE IS mixj93.com!");
+            //         }, 4500);
+            //     }, 3300);
+            // }, 1000);
+            $('.big-word').typewriting( "FEAR NOTHING, RESPECT EVERYTHING. WELCOME TO mixj93.com!", {
+                 "typing_interval": 200,
+                 "blink_interval": "1s",
+                 "cursor_color": "#fff"
+            }, function(){
+                
+            });
+        });
+    </script>
 </body>
 </html>
