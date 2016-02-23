@@ -10,7 +10,7 @@ body {
 .jumbotron {
     padding-top: 50px;
     padding-bottom: 50px;
-    background: linear-gradient(to top left, #2B5FE1, #F9615B);
+    background: url(../images/bg/bg1.png) center center;
     color: #fff;
 }
 
