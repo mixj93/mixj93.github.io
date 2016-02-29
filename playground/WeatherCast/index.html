@@ -3,23 +3,28 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Weather Cast</title>
+	<script src="../../addons/jquery/1.12.0/jquery.min.js"></script>
 </head>
 <body>
-	<script>
-	var x=document.getElementById("demo");
-	function getLocation()
-	  {
-	  if (navigator.geolocation)
-	    {
-	    navigator.geolocation.getCurrentPosition(showPosition);
-	    }
-	  else{x.innerHTML="该浏览器不支持获取地理位置。";}
-	  }
-	function showPosition(position)
-	  {
-	  x.innerHTML="Latitude: " + position.coords.latitude + 
-	  "<br>Longitude: " + position.coords.longitude; 
-	  }
+
+	<script type="text/javascript">
+		var weatherData;
+		$.getJSON("http://api.openweathermap.org/data/2.5/find?q=nanjing&units=metric&appid=2043427214dea6ff63a8e274220cc547",
+		{
+			format: "json"
+		},
+		function(data) {
+			weatherData = {
+				'city': data.list[0].name,
+				'country': data.list[0].sys.country,
+				'temp': data.list[0].main.temp,
+				'pressure': data.list[0].main.pressure,
+				'humidity':  data.list[0].main.humidity,
+				'weatherId': data.list[0].weather[0].id,
+				'weatherMain': data.list[0].weather[0].main,
+				'weatherDesc': data.list[0].weather[0].description
+			};
+		});
 	</script>
 </body>
 </html>
