@@ -9,22 +9,66 @@
 
 	<script type="text/javascript">
 		var weatherData;
-		$.getJSON("http://api.openweathermap.org/data/2.5/find?q=nanjing&units=metric&appid=2043427214dea6ff63a8e274220cc547",
-		{
-			format: "json"
-		},
-		function(data) {
-			weatherData = {
-				'city': data.list[0].name,
-				'country': data.list[0].sys.country,
-				'temp': data.list[0].main.temp,
-				'pressure': data.list[0].main.pressure,
-				'humidity':  data.list[0].main.humidity,
-				'weatherId': data.list[0].weather[0].id,
-				'weatherMain': data.list[0].weather[0].main,
-				'weatherDesc': data.list[0].weather[0].description
-			};
-		});
+		function getWeatherData(place){
+			$.getJSON("http://api.openweathermap.org/data/2.5/find?q=" + place + "&units=metric&appid=2043427214dea6ff63a8e274220cc547",
+			{
+				format: "json"
+			},
+			function(data) {
+				weatherData = {
+					'city': {
+						'type': 'city',
+						'value': data.list[0].name,
+					},
+					'country': {
+						'type': 'country',
+						'value': data.list[0].sys.country,
+					},
+					'temp': {
+						'type': 'figure',
+						'value': data.list[0].main.temp,
+						'unit': '°C'
+					},
+					'pressure': {
+						'type': 'figure',
+						'value': data.list[0].main.pressure,
+						'unit': 'hpa'
+					},
+					'humidity':  {
+						'type': 'figure',
+						'value': data.list[0].main.humidity,
+						'unit': '%'
+					},
+					'weatherId': {
+						'type': 'typeId',
+						'value': data.list[0].weather[0].id,
+					},
+					'weatherMain': {
+						'type': 'main',
+						'value': data.list[0].weather[0].main,
+					},
+					'weatherDesc': {
+						'type': 'desc',
+						'value': data.list[0].weather[0].description,
+					}
+				};
+
+				$("body").empty();
+
+				for (var item in weatherData) {
+				    if (weatherData.hasOwnProperty(item)) {
+				        if (weatherData[item].type == "figure") {
+				        	$("body").append(item + ': ' + weatherData[item].value + ' ' + weatherData[item].unit + '<br>');
+				        } else {
+				        	$("body").append(item + ': ' + weatherData[item].value + '<br>');
+				        }
+				    }
+				}
+			});
+		}
+
+		getWeatherData("nanjing");
+
 	</script>
 </body>
 </html>
