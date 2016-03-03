@@ -1,0 +1,42 @@
+{
+    "coord": {
+        "lon": 118.78,
+        "lat": 32.06
+    },
+    "weather": [
+        {
+            "id": 721,
+            "main": "Haze",
+            "description": "haze",
+            "icon": "50d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 16,
+        "pressure": 1016,
+        "humidity": 63,
+        "temp_min": 16,
+        "temp_max": 16
+    },
+    "visibility": 2800,
+    "wind": {
+        "speed": 2,
+        "deg": 120
+    },
+    "clouds": {
+        "all": 64
+    },
+    "dt": 1456999200,
+    "sys": {
+        "type": 1,
+        "id": 7447,
+        "message": 0.0174,
+        "country": "CN",
+        "sunrise": 1456957759,
+        "sunset": 1456999469
+    },
+    "id": 1799962,
+    "name": "Nanjing",
+    "cod": 200
+}
