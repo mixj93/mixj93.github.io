@@ -69,8 +69,6 @@
 			});
 		}
 
-		//getWeatherDataByCity("nanjing");
-
 		function getWeatherDataByCoordinates(lat, lon) {
 			$.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=metric&appid=2043427214dea6ff63a8e274220cc547",
 			{
@@ -143,8 +141,22 @@
 			}
 		}
 
+		function getCityByCoordinates(lat, lon) {
+			var cityName = "";
+			$.getJSON("http://nominatim.openstreetmap.org/reverse?format=json&accept-language=en&lat=" + lat + "&lon=" + lon ,
+			{
+				format: "json"
+			},
+			function(data) {
+				console.log(data);
+				cityName = data.address.city;
+
+				getWeatherDataByCity(cityName);
+			});
+		}
+
 		function showPosition(position) {
-			getWeatherDataByCoordinates(position.coords.latitude, position.coords.longitude);
+			getCityByCoordinates(position.coords.latitude, position.coords.longitude);
 		}
 
 		function showError(error) {
