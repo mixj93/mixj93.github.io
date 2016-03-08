@@ -31,18 +31,19 @@ body {
 }
 
 .section-list-item {
-    padding: 20px;
+
 }
 
 .section-list-item a {
     display: block;
     color: #fff;
+    padding: 20px;
 }
 
 .section-list-item:hover {
     box-shadow: inset 0 -10rem rgba(0,0,0,.1);
 }
 
-.articles .section-list-item a {
+.articles .section-list-item a, .playground .section-list-item a {
     color: #333;
 }
