@@ -1,6 +1,9 @@
 function decToHexStr(decNum) {
 	var hexStr;
 	hexStr = decNum.toString(16);
+	if (hexStr.length < 2){
+		hexStr = "0" + hexStr;
+	}
 	return hexStr;
 }
 
@@ -25,21 +28,44 @@ function hexToRgb(hexColor) {
 
 		var splitRe = /^([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})$/;
 		var hexArr = splitRe.exec(hexColor);
-		var rbgArr = [];
+		var rgbArr = [];
 		for (var i = 1; i < hexArr.length; i++) {
-			rbgArr.push(hexToDecNum(hexArr[i]));
+			rgbArr.push(hexToDecNum(hexArr[i]));
 		}
-		var rbgColor = "rgb(" + rbgArr.join(", ") + ")";
+		var rgbColor = "rgb(" + rgbArr.join(", ") + ")";
 
-		return rbgColor;
+		return { 
+			hex: "#"+hexColor, 
+			rgb: rgbColor 
+		};
 
 	} else {
-		alertError("十六进制颜色值位数不正确");
+		alertError("十六进制颜色值不正确");
 	}
 }
 
-function rgbToHex() {
-	var rgbRe = /^rgb\([\d\,\s]+\)$/;
+function rgbToHex(rgbColor) {
+	var rgbRe = /^rgb\(\s*(\d|\d\d|1\d\d|2[0-4]\d|25[0-5])\s*\,\s*(\d|\d\d|1\d\d|2[0-4]\d|25[0-5])\s*\,\s*(\d|\d\d|1\d\d|2[0-4]\d|25[0-5])\s*\)$/;
+	if (rgbRe.test(rgbColor)) {
+		var rgbArr = rgbRe.exec(rgbColor);
+
+	var hexArr = [];
+	var hexColor = "";
+	for (var i = 1; i < rgbArr.length; i++) {
+		hexArr.push(decToHexStr(parseInt(rgbArr[i])));
+	}
+
+	hexColor = "#" + hexArr.join("");
+	rgbColor = "rgb(" + rgbArr[1] +", "+ rgbArr[2] +", "+ rgbArr[3] + ")";
+
+	return { 
+		hex: hexColor, 
+		rgb: rgbColor 
+	};
+
+	} else {
+		alertError("RGB颜色值不正确");
+	}
 }
 
 function alertError(msg) {
