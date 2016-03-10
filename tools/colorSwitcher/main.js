@@ -36,7 +36,9 @@ function hexToRgb(hexColor) {
 
 		return { 
 			hex: "#"+hexColor, 
-			rgb: rgbColor 
+			hexValue: hexColor,
+			rgb: rgbColor,
+			rgbValue: rgbArr
 		};
 
 	} else {
@@ -59,8 +61,10 @@ function rgbToHex(rgbColor) {
 	rgbColor = "rgb(" + rgbArr[1] +", "+ rgbArr[2] +", "+ rgbArr[3] + ")";
 
 	return { 
-		hex: hexColor, 
-		rgb: rgbColor 
+		hex: hexColor,
+		hexValue:  hexArr.join(""),
+		rgb: rgbColor,
+		rgbValue: [parseInt(rgbArr[1]), parseInt(rgbArr[2]), parseInt(rgbArr[3])]
 	};
 
 	} else {
