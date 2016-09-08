@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>傅园慧100米仰泳长池成绩汇总</title>
+  <script type="text/javascript" src="http://cdn.bootcss.com/echarts/3.2.3/echarts.min.js"></script>
+</head>
+<body>
+  <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+  <div id="main" style="width: 100%;height:400px;"></div>
+  <script type="text/javascript">
+      // 基于准备好的dom，初始化echarts实例
+      var myChart = echarts.init(document.getElementById('main'));
+      var scoreData = [
+        {
+          time: 60130,
+          date: "2015-01"
+        },
+        {
+          time: 59410,
+          date: "2015-04"
+        },
+        {
+          time: 59020,
+          date: "2015-07"
+        },
+        {
+          time: 60420,
+          date: "2016-02"
+        },
+        {
+          time: 61820,
+          date: "2016-04"
+        },
+        {
+          time: 58760,
+          date: "2016-08"
+        }
+      ];
+      // 指定图表的配置项和数据
+      var option = {
+          title: {
+              text: '傅园慧100米仰泳长池成绩汇总'
+          },
+          tooltip: {},
+          // legend: {
+          //     data:['销量']
+          // },
+          xAxis: {
+              data: scoreData.map(function (item) {
+                return item.date;
+              })
+          },
+          yAxis: {
+            min: 56000,
+            max: 64000
+          },
+          series: [{
+              name: '成绩',
+              type: 'line',
+              data: scoreData.map(function (item) {
+                return item.time;
+              })
+          }]
+      };
+
+      // 使用刚指定的配置项和数据显示图表。
+      myChart.setOption(option);
+  </script>
+</body>
+</html>
