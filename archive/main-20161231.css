@@ -1,0 +1,127 @@
+body {
+    padding-top: 50px;
+}
+
+.navbar-header .navbar-brand {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.jumbotron {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: url(../images/bg/bg1.png) center center;
+    color: #fff;
+}
+
+.section-cont {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    line-height: 1;
+    padding-left: 14px;
+    border-left: 6px solid #ddd;
+}
+
+.section-list {
+    padding: 0;
+    list-style: none;
+}
+
+.section-list-item {
+
+}
+
+.section-list-item a {
+    display: block;
+    color: #fff;
+    padding: 20px;
+}
+
+.section-list-item:hover {
+    box-shadow: inset 0 -10rem rgba(0,0,0,.1);
+}
+
+.articles .section-list-item a, .playground .section-list-item a {
+    color: #333;
+}
+
+.outer.contact {
+    background-color: #222;
+    padding: 50px 0;
+}
+
+.col-cus-9 {
+    width: 11.111%;
+    float: left;
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+    .col-cus-9 { width: 33.333%; }
+}
+
+.social-icons {
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.social-icons span{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%; 
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.social-icons:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    transition: .3s;
+    -webkit-transition: .3s;
+}
+
+.social-icons:hover:before {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+
+.social-icons.email:before { background-color: #1593E0;  }
+.social-icons.weibo:before { background-color: #E6162D;  }
+.social-icons.twitter:before { background-color: #55ACEE;  }
+.social-icons.qq:before { background-color: #14B9F7;  }
+.social-icons.telegram:before { background-color: #2AA1DA;  }
+.social-icons.instagram:before { background-color: #125688;  }
+.social-icons.douban:before { background-color: #072;  }
+.social-icons.steam:before { background-color: #1B2838;  }
+.social-icons.github:before { background-color: #181717;  }
+
+.social-icons.email span { background-image: url(../images/icons/social-icon-email.png); }
+.social-icons.weibo span { background-image: url(../images/icons/social-icon-weibo.png); }
+.social-icons.twitter span { background-image: url(../images/icons/social-icon-twitter.png); }
+.social-icons.qq span { background-image: url(../images/icons/social-icon-qq.png); }
+.social-icons.telegram span { background-image: url(../images/icons/social-icon-telegram.png); }
+.social-icons.instagram span { background-image: url(../images/icons/social-icon-instagram.png); }
+.social-icons.douban span { background-image: url(../images/icons/social-icon-douban.png); }
+.social-icons.steam span { background-image: url(../images/icons/social-icon-steam.png); }
+.social-icons.github span { background-image: url(../images/icons/social-icon-github.png); }
