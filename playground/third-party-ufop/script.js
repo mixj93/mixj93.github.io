@@ -13,9 +13,9 @@ $("#btnGen").click(function(){
   var month = date.split('-')[1]
   
   var insertText = `db.ufop.insert({"created_at":ISODate("${date}T00:00:00.366Z"), "logo":"service-logo-${name}.png", "name":"${name}", "priority" : 0, "provider":"", "provider_full_name":"", "status":false, "title":"", "version":"${year}.${month}.0001"})`;
-  var updateTitleText = `db.ufop.update({'name':'smtextspam'},{$set:{'title':'${title}'}})`;
-  var updateProviderText = `db.ufop.update({'name':'smtextspam'},{$set:{'provider':'${provider}'}})`;
-  var updateProviderFullNameText = `db.ufop.update({'name':'smtextspam'},{$set:{'provider':'${providerFullName}'}})`;
+  var updateTitleText = `db.ufop.update({'name':'${name}'},{$set:{'title':'${title}'}})`;
+  var updateProviderText = `db.ufop.update({'name':'${name}'},{$set:{'provider':'${provider}'}})`;
+  var updateProviderFullNameText = `db.ufop.update({'name':'${name}'},{$set:{'provider':'${providerFullName}'}})`;
 
   $('#textareaInsert').text(insertText);
   $('#textareaTitle').text(updateTitleText);
