@@ -1,0 +1,6 @@
+.CodePreview pre {
+  height: 400px;
+  max-height: 400px;
+  word-break: break-word;
+  white-space: normal;
+}
