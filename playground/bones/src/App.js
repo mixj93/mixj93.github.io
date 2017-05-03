@@ -30,7 +30,7 @@ class App extends Component {
         console.log(response);
       });
     } else {
-      alert("浏览器版本过低，请使用高版本浏览器。");
+      alert("浏览器版本过低，推荐使用 Chrome 浏览器。");
     }
   }
 
