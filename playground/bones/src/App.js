@@ -70,7 +70,6 @@ class App extends Component {
   }
 
   handleSelectChange(event) {
-    console.log(event);
     this.setState({season: event.target.value}, function() {
       this.getRandom();
     });
