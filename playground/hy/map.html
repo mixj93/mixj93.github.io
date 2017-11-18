@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .map-wrap {max-width: 100%; max-height: 100%; position: relative;}
+    .map-wrap img {width: 100%; position: absolute; top: 0; left: 0;}
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="but-group">
+      <button v-on:click="isGridShow = !isGridShow">网格</button>
+      <button v-on:click="isCarShow = !isCarShow">刷车点</button>
+      <button v-on:click="isShipShow = !isShipShow">刷船点</button>
+      <button v-on:click="isR1Show = !isR1Show">高级资源点</button>
+      <button v-on:click="isR2Show = !isR2Show">中级资源点</button>
+    </div>
+    <div class="map-wrap">
+      <img id="img-map" src="http://ovwg0zvng.bkt.clouddn.com/map.jpg" alt="地图" />
+      <img id="img-grid" v-bind:style="{ display: isGridShow ? 'block' : 'none' }" src="http://ovwg0zvng.bkt.clouddn.com/grid.png" alt="网格" />
+      <img id="img-r2" v-bind:style="{ display: isR2Show ? 'block' : 'none' }" src="http://ovwg0zvng.bkt.clouddn.com/hy/r2.png" alt="中级资源点" />
+      <img id="img-r1" v-bind:style="{ display: isR1Show ? 'block' : 'none' }" src="http://ovwg0zvng.bkt.clouddn.com/r1.png" alt="高级资源点" />
+      <img id="img-ship" v-bind:style="{ display: isShipShow ? 'block' : 'none' }" src="http://ovwg0zvng.bkt.clouddn.com/hy/ships.png" alt="刷船点" />
+      <img id="img-car" v-bind:style="{ display: isCarShow ? 'block' : 'none' }" src="http://ovwg0zvng.bkt.clouddn.com/hy/vehicles.png" alt="刷车点" />
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        isGridShow: true,
+        isCarShow: true,
+        isShipShow: true,
+        isR1Show: true,
+        isR2Show: true,
+      }
+    })
+  </script>
+</body>
+</html>
