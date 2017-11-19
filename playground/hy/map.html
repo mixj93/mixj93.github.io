@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>荒野求生地图</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.2.13/dist/semantic.min.css">
   <style>
     .map-wrap {max-width: 100%; max-height: 100%; position: relative;}
     .map-wrap img {width: 100%; position: absolute; top: 0; left: 0;}
@@ -12,13 +13,30 @@
 </head>
 <body>
   <div id="app">
+    <div class="ui divider"></div>
     <div class="but-group">
-      <button v-on:click="isGridShow = !isGridShow">网格</button>
-      <button v-on:click="isCarShow = !isCarShow">刷车点</button>
-      <button v-on:click="isShipShow = !isShipShow">刷船点</button>
-      <button v-on:click="isR1Show = !isR1Show">高级资源点</button>
-      <button v-on:click="isR2Show = !isR2Show">中级资源点</button>
+      <div class="ui labeled button" tabindex="0" v-on:click="isGridShow = !isGridShow">
+        <div class="ui teal button"><i class="grid layout icon"></i> 网格</div>
+        <a class="ui basic teal left pointing label">{{isGridShow ? '开' : '关'}}</a>
+      </div>
+      <div class="ui labeled button" tabindex="0" v-on:click="isCarShow = !isCarShow">
+        <div class="ui teal button"><i class="car icon"></i> 刷车点</div>
+        <a class="ui basic teal left pointing label">{{isCarShow ? '开' : '关'}}</a>
+      </div>
+      <div class="ui labeled button" tabindex="0" v-on:click="isShipShow = !isShipShow">
+        <div class="ui teal button"><i class="anchor icon"></i> 刷船点</div>
+        <a class="ui basic teal left pointing label">{{isShipShow ? '开' : '关'}}</a>
+      </div>
+      <div class="ui labeled button" tabindex="0" v-on:click="isR1Show = !isR1Show">
+        <div class="ui teal button"><i class="star icon"></i> 高级资源点</div>
+        <a class="ui basic teal left pointing label">{{isR2Show ? '开' : '关'}}</a>
+      </div>
+      <div class="ui labeled button" tabindex="0" v-on:click="isR2Show = !isR2Show">
+        <div class="ui teal button"><i class="star half empty icon"></i> 中级资源点</div>
+        <a class="ui basic teal left pointing label">{{isR1Show ? '开' : '关'}}</a>
+      </div>
     </div>
+    <div class="ui divider"></div>
     <div class="map-wrap">
       <img id="img-map" src="http://ovwg0zvng.bkt.clouddn.com/map.jpg" alt="地图" />
       <img id="img-grid" v-bind:style="{ display: isGridShow ? 'block' : 'none' }" src="http://ovwg0zvng.bkt.clouddn.com/grid.png" alt="网格" />
